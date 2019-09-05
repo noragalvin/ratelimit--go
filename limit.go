@@ -26,7 +26,7 @@ func init() {
 }
 
 func addVisitor(ip string) *rate.Limiter {
-	limiter := rate.NewLimiter(2, 5)
+	limiter := rate.NewLimiter(2, 40)
 	mtx.Lock()
 	// Include the current time when creating a new visitor.
 	visitors[ip] = &visitor{limiter, time.Now()}
